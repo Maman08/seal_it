@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function Table() {
@@ -26,12 +27,16 @@ export default function Table() {
 
     ];
 
+
     function handleClick(e: any) {
       console.log(e.target.parentElement.firstElementChild.textContent);
       let docId = e.target.parentElement.firstElementChild.textContent;
-      
+       
     }
     
+    function handleReject() {
+      console.log("rejected");
+    }
     
     if(Docs.length!=0) {
         return (
@@ -60,6 +65,7 @@ export default function Table() {
           </thead>
           <tbody>
             {Docs.map((Doc: doc) => (
+              
               <tr onClick={handleClick} className="border-separate border-2 border-blue-100 overflow-x-scroll hover:bg-black hover:bg-opacity-10">
                 <td className="text-center md:h-fit border-collapse border-2 border-blue-100 overflow-x-scroll text-nowrap">
                   {Doc.id}
@@ -70,8 +76,12 @@ export default function Table() {
                 <td className="text-center md:h-fit border-collapse border-2 border-blue-100 overflow-x-scroll">
                   {Doc.user_id}
                 </td>
+
                 <td className="text-center md:h-fit border-collapse border-2 border-blue-100 overflow-x-scroll">
+                  <Link href={`${Doc.src}`}>
                   {Doc.src}
+                  </Link>
+           
                 </td>
                 <td className="text-center md:h-fit border-collapse border-2 border-blue-100 overflow-x-scroll">
                   {Doc.name}
@@ -81,7 +91,7 @@ export default function Table() {
                     Approve
                   </button>
   
-                  <button className="m-1 lg:px-3 md:p-1 py-1 rounded-full sm:text-sm lg:text-xl text-red-600 transition ease-in-out delay-100 border-2 border-red-600 hover:-translate-y-1 hover:scale-105 hover:bg-red-600 hover:text-black duration-300 ...">
+                  <button onClick={handleReject} className="m-1 lg:px-3 md:p-1 py-1 rounded-full sm:text-sm lg:text-xl text-red-600 transition ease-in-out delay-100 border-2 border-red-600 hover:-translate-y-1 hover:scale-105 hover:bg-red-600 hover:text-black duration-300 ...">
                     Reject
                   </button>
                 </td>

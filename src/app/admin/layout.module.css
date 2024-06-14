@@ -1,0 +1,8 @@
+
+.background {
+    color: rgb(var(--foreground-rgb));
+    
+    background: -webkit-linear-gradient(to right, #19376D, #576CBC, #7761DC, #19376D);
+  
+    background: linear-gradient(to right, #19376D, #576CBC, #7761DC, #19376D);
+}

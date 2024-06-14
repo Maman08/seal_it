@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-
+import Navbar from "../../src/app/components/Navbar/Navbar";
 export default function Home() {
   const router = useRouter();
   const getStarted = () => {
@@ -8,6 +8,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Navbar />
 <main className="flex flex-col items-center justify-between p-12  min-h-screen text-white bg-[url('/images/yuki.jpg')] bg-cover bg-no-repeat">      <section className="grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl glass-morph p-10 gap-10 sm:p-4">
         <section className="text-center mb-12 ">
           <h6 className="text-m md:text-2xl lg:3xl font-extrabold mb-10 mt-20 sm:text-xl  ">
@@ -119,5 +121,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
+
 }
