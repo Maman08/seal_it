@@ -51,10 +51,19 @@ export default function Home() {
           </div>
 
         </div>
-*/
+*/ 
       <div>
-        <div className="h-full">
+        <div className={`h-full bg-[url("/images/bg-image.jpg")] object-cover`}>
+        <div className="my-4 grid grid-cols-6 mx-10">
+          <div className="col-span-3 row-span-6 m-6 p-3 flex items-center shadow-md shadow-blue-300">
+            <p className={`${styles.text} text-5xl text-wrap mx-auto text-center mb-2`}>
+              Welcome to Seal It – the game-changing platform that's set to
+              revolutionize the way we approach documents! Forget about those
+              thick dusty files, It's time we #SealTheFuture!
+            </p>
+          </div>
 
+        </div>
         </div>
         <div>
 

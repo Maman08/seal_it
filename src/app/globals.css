@@ -22,15 +22,11 @@
 body {
 
   color: rgb(var(--foreground-rgb));
-  /*
   background: -webkit-linear-gradient(to right, #010101, #7761DC, #010101, #010101);
 
   background: linear-gradient(to right, #010101, #7761DC, #010101, #010101);
-   */
+ 
   background-size: cover;
-
-
-
 } 
 
 .App {

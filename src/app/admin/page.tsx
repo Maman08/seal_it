@@ -61,7 +61,7 @@ export default async function Admin() {
   return (
 
     <div className=" flex flex-col m-8 overflow-scroll scroll-auto  text-white">
-        <span className="mb-4 px-4 text-3xl  bg-black shadow-md shadow-amber-500 w-fit">
+        <span className="mb-4 px-4 text-3xl  bg-black shadow-md shadow-black w-fit">
             <p className="text-2xl font-semibold ">{alertText}</p>
         </span>
         <div ></div>
