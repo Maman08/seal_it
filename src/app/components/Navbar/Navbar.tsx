@@ -25,6 +25,7 @@ import { auth } from '../../firebase';
 import { useRouter } from 'next/navigation'; // Corrected import for useRouter
 import toast from 'react-hot-toast';
 import styles from "./Navbar.module.css"; // Import custom CSS module for styles
+import { any } from 'zod';
 
 const Navbar = () => {
   const [user, setUser] = useState(null); // Use state to track the user's authentication state
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   // Add a useEffect to listen for changes in the user's authentication state
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setUser(user); // Update the user state when the authentication state changes
     });
 
