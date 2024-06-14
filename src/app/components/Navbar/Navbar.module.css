@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Pacifico&display=swap');
+
+.navbar {
+    background: -webkit-linear-gradient(to left, #7761DC, #010101, #010101, #7761DC);
+    background: linear-gradient(to left, #7761DC, #010101, #010101, #7761DC);
+    box-shadow: azure;
+}
+
+.title {
+    font-family: "Allura", cursive;
+    font-weight: 800;
+    font-style: normal;
+    text-align: center;
+}

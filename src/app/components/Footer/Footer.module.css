@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Pacifico&display=swap');
+.footer {
+    background: -webkit-linear-gradient(to left, #010101, #7761DC, #010101);
+    background: linear-gradient(to left, #010101, #7761DC, #010101);
+    box-shadow: azure;
+    font-family: "Allura", cursive;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: underline;
+    position: static;
+    bottom: 0px;
+}
