@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation"
 
 import styles from "./Navbar.module.css"
 
-export default function NavBar() {
+export default function NavBar( ) {
   const pathname = usePathname();
 
   return(

@@ -21,13 +21,13 @@ export default function UploadForm() {
   }
 
   return (
-    <form className={`flex flex-col mx-auto w-fit p-7 items-center justify-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-700 dark:border-gray-600`}>
-      <span className="text-xl">Upload The Document Here!</span>
-      <label className={`mb-2 text-sm font-medium text-gray-900 dark:text-white`}>
-        
-        <input className={`text-xl text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400`} type="file" name="file" ref={fileInput} />
+    <form className={`flex flex-col mx-8 w-fit p-7 items-center justify-center bg-transparent backdrop-blur-sm border border-white rounded-lg shadow`}>
+      <span className="text-2xl font-semibold">Upload The Document Here!</span>
+      <label className={`m-2 text-sl font-medium text-gray-800`}>
+
+        <input className={`text-sm w-60 text-gray-800 border border-gray-300 rounded-lg cursor-pointer bg-gray-700 focus:outline-none dark:bg-gray-300 dark:border-gray-800 dark:placeholder-gray-700`} type="file" name="file" ref={fileInput} />
       </label>
-      <button className={`text-2xl px-4 py-1 rounded-full border-2 border-blue-100 shadow-sm shadow-blue-100 mt-4`} type="submit" onClick={uploadFile}>
+      <button className={`text-2xl px-4 py-1 rounded-md border-2 bg-blue-700 border-blue-100 mt-4`} type="submit" onClick={uploadFile}>
         Submit
       </button>
     </form>

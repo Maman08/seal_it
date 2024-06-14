@@ -4,16 +4,16 @@ import UploadForm from "../../components/UploadForm/UploadForm";
 export default function User({ params }: { params: { slug: string } }) {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex h-full flex-row">
+      <div className="flex h-full flex-row justify-around">
         <UploadForm />
 
-        <div className="max-w-sm h-72 p-6 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="max-w-sm h-72 p-6 pt-16 mx-8 bg-transparent backdrop-blur-sm border border-gray-200 rounded-lg shadow">
           <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-300 dark:text-white">
               View NFTs
             </h5>
           </a>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal text-white dark:text-gray-400">
             View all your documents stored here.
           </p>
           <a
@@ -42,18 +42,18 @@ export default function User({ params }: { params: { slug: string } }) {
 
       <a
         href="#"
-        className="flex flex-col mt-10 mx-auto items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className="flex flex-col mt-10 mx-auto items-center bg-transparent backdrop-blur-sm bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl"
       >
         <img
-          className="w-full rounded-t-lg m-0 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-          src="/images/img-1.jpg"
+          className=" object-cover w-full rounded-t-lg m-0 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+          src="/images/nft-img.jpg"
           alt="img"
         ></img>
         <div className="flex flex-col justify-center p-4 leading-normal h-72">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-300 dark:text-white">
             Buy/Sell/Bid in Market Place!
           </h5>
-          <p className="mb-3 font-normal text-wrap text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal text-wrap text-white dark:text-gray-400">
           Specialized NFT marketplace for documents enables users to buy, sell, and bid on documents, 
           ensuring secure and transparent transactions through blockchain technology. 
           </p>

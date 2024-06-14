@@ -5,7 +5,7 @@ export default function HomeBtn() {
  
   return (
     <button onClick={() => router.push('/')} className="border-2 border-blue-300 shadow-sm shadow-blue-300">
-      Home
+      Home 
     </button >
   )
 }
