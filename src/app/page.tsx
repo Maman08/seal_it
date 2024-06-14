@@ -1,64 +1,123 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import {FaUser, FaUserGear} from 'react-icons/fa6';
-import Image from 'next/image';
-import styles from "./page.module.css"
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+  const getStarted = () => {
+    router.push("/login");
+  };
 
+  return (
+<main className="flex flex-col items-center justify-between p-12  min-h-screen text-white bg-[url('/images/yuki.jpg')] bg-cover bg-no-repeat">      <section className="grid grid-cols-1 md:grid-cols-2 w-full max-w-4xl glass-morph p-10 gap-10 sm:p-4">
+        <section className="text-center mb-12 ">
+          <h6 className="text-m md:text-2xl lg:3xl font-extrabold mb-10 mt-20 sm:text-xl  ">
+          The E2E Platform for Sealing
+          </h6>
+          <p className="text-lg mb-8 md:text-xl font-serif  ">
+          Modernizing Government Document 
+          Management with Blockchain Solutions
+          </p>
+          <button
+            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-500 hover:text-white"
+            onClick={getStarted}
+          >
+            Get Started
+          </button>
+        </section>
+        <img
+          src="../images/alfiya2.png"
+          alt="My Image"
+          className="mainImage place-self-center h-80 "
+        />
+      </section>
 
-    return (
-      /*
-       <div className="bg-blue-100 h-full">
-          <div className="flex flex-wrap items-center justify-center pt-12 md:space-x-[100px]">
-            <Link href={{ pathname: '/login', query: { userType: 'user' } }}>
-              <div className={`card bg-blue-300 mx-6 flex flex-col items-center justify-center lg:h-[300px] lg:w-[500px] text-white font-semibold px-6 py-4 rounded-md cursor-pointer transition-transform  duration-300 `}>
-                <FaUser className="text-4xl mx-auto mb-4" />
-                <h1 className="text-2xl mx-auto text-center mb-2">User Dashboard</h1>
-                <h1 className='mx-auto text-center '>Save and Secure your Documents!</h1>
-              </div>
-            </Link>
-    
-            <Link href={{ pathname: '/login', query: { userType: 'admin' } }}>
-              <div className={`card bg-blue-300 mx-6 flex flex-col items-center justify-center lg:h-[300px] lg:w-[500px]  text-white font-semibold px-6 py-4 rounded-md cursor-pointer transition-transform duration-300 `}>
-                <FaUserGear className="text-5xl mx-auto mb-4 " />
-                <h1 className="text-2xl mb-2 mx-auto text-center">Admin Dashboard</h1>
-                <h1 className='mx-auto text-center'>Verify and Approve Documents.</h1>
-              </div>
-            </Link>
+      <h1 className="features mt-32 text-2xl  md:text-3xl font-sans mb-10">
+        Know More
+      </h1>
+{/* </main> */}
+      <section className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-x-20 gap-y-8 w-full max-w-7xl justify-items-center main-dabba md:mt-4">
+        {/* Feature Card 1 */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front bg-blue-400 rounded-lg shadow-lg p-6 dabba ">
+              <h3 className="text-xl font-semibold my-4">
+              Trading Legally Owned Items with Minimum Hassle
+              </h3>
+            </div>
+            <div className="flip-card-back bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <p className="text-white text-left rtl:text-right">
+                • Simplifies the transfer process, reducing paperwork and intermediary involvement.  
+
+              </p>
+              <p className="text-white text-left rtl:text-right">
+                • Blockchain provides a clear, immutable record of transactions.
+              </p>
+            </div>
           </div>
-          <div className="mr-20 flex items-center justify-center h-fit ">
-              <div className="bg-blue-100 h-fit md:space-x-[100px] grid grid-cols-6 gap-y-7 my-10">
-                 <span className="ml-24 col-span-4 row-span-3 bg-blue-300 flex flex-col items-center justify-center border-2 border-red-500 box shadow-sm shadow-red-600 rounded-lg px-2">
-                  <p className="text-center text-2xl font-semibold border-3 border-white p-3 shadow-md shadow-red-400">Blockchain-based Insurance</p>
-                  <p className="text-center text-xl font-normal">Documents on the blockchain are tamper-proof and easily verifiable. Issuing authorities signed documents for indisputable authenticity</p>
-                 </span>                 
-                 <span className="mr-1 col-span-2 row-span-4 bg-blue-300 flex flex-col items-center justify-center border-2 border-red-500 box shadow-sm shadow-red-600 rounded-lg px-2">
-                  <p className="text-center text-2xl font-semibold border-3 border-white p-3 shadow-md shadow-red-400">Automated Approval Pipeline</p>
-                  <p className="text-center text-xl font-normal">Only approved and signed modifications by the issuing authority, mirroring traditional process but with enhanced speed and accuracy on-chain.</p>
-                 </span>
-              
-                 <span className="col-span-2 row-span-4 col-start-1 bg-blue-300 flex flex-col items-center justify-center border-2 border-red-500 box shadow-sm shadow-red-600 rounded-lg px-2">
-                  <p className="text-center text-2xl font-semibold border-3 border-white p-3 shadow-md shadow-red-400">NFT-Based Document Representation</p>
-                  <p className="text-center text-xl font-normal">NFTs on IPFS act as digital ownership certificates.</p>
-                 </span>                 
-                 <span className="col-span-4 row-span-3 bg-blue-300 flex flex-col items-center justify-center border-2 border-red-500 box shadow-sm shadow-red-600 rounded-lg px-2">
-                  <p className="text-center text-2xl font-semibold border-3 border-white p-3 shadow-md shadow-red-400">Integrated Marketplace with Bidding System</p>
-                  <p className="text-center text-xl font-normal">Facilitates secure transactions, including marketplace and biddingfunctionalities. All transactions occur within the SealIt platform, ensuring security and transparency from start to finish.</p>
-                 </span>                 
+        </div>
 
-              </div>
+        {/* Feature Card 2 */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <h3 className="text-xl font-semibold my-4">
+              Digital Wallets for Essential Documents
+              </h3>
+            </div>
+            <div className="flip-card-back bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <p className="text-white text-left rtl:text-right">
+                • Eliminates the need to carry physical documents.
+
+              </p>
+              <p className="text-white text-left rtl:text-right">
+                • Documents can be accessed and shared easily via mobile devices.
+
+              </p>
+            </div>
           </div>
-
         </div>
-*/
-      <div>
-        <div className="h-full">
 
-        </div>
-        <div>
+        {/* Feature Card 3 */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <h3 className="text-xl font-semibold my-4">
+              One-Time Payment for Blockchain Storage:
+              </h3>
+            </div>
+            <div className="flip-card-back bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <p className="text-white text-left rtl:text-right">
+                •  Instead of recurring cloud storage fees, offer a one-time payment model for data storage on the blockchain.
 
+              </p>
+              <p className="text-white text-left rtl:text-right">
+                {/* • Effortless access to attendance records for students and
+                tutors alike. */}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    );
+
+        {/* Feature Card 4 */}
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <h3 className="text-xl font-semibold my-4">
+              Verification and Storage of Old Documents
+              </h3>
+            </div>
+            <div className="flip-card-back bg-blue-400 rounded-lg shadow-lg p-6 dabba">
+              <p className="text-white text-left rtl:text-right">
+                • Digitize and store old documents of ownership (stocks, mutual funds, etc.) on the blockchain.
+
+              </p>
+              <p className="text-white text-left rtl:text-right">
+                • Protects against loss, damage, or forgery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

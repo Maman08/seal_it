@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -18,32 +16,25 @@
   }
 }
 
-
 body {
-
   color: rgb(var(--foreground-rgb));
-  /*
-  background: -webkit-linear-gradient(to right, #010101, #7761DC, #010101, #010101);
-
-  background: linear-gradient(to right, #010101, #7761DC, #010101, #010101);
-   */
+  background: -webkit-linear-gradient(to right, #2B2E4A, #1F4172);
+  background: linear-gradient(to right, #2B2E4A, #1F4172);
+  /* background-color: rgb(30 41 59); */
+  background-repeat: no-repeat;
   background-size: cover;
-
-
-
-} 
+  background-position: 0 0;
+}
 
 .App {
-  font-family: "Yatra One";
-  font-weight: 400;
-  font-style: normal;
+  font-family: sans-serif;
   text-align: center;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 
-.loginbody {
+/* .loginbody {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +81,7 @@ a {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
-}
+} */
 
 .loginbutton:active {
   transform: scale(0.95);
@@ -103,6 +94,11 @@ a {
 button.ghost {
   background-color: transparent;
   border-color: #ffffff;
+}
+
+button.ghost:hover{
+  background-color: hsl(0, 0%, 90%);
+  color: black;
 }
 
 .loginform {
@@ -197,6 +193,7 @@ input {
   background: #2B2E4A;
   background: -webkit-linear-gradient(to right, #0F4C75, #3282B8);
   background: linear-gradient(to right, #0F4C75, #3282B8);
+  /* background-color: rgba(54, 101, 176, 0.412); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -255,53 +252,91 @@ input {
   transform: perspective(1000px) rotateY(40deg);
   transition: transform 0.3s ease;
 }
-
-/* Add this CSS in your stylesheet or component */
-.forgot-password-dialog {
-  position: fixed;
-  top: 50%;
-  left: 13%;
-  transform: translate(-50%, -50%);
-  background-color: #1F4172;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 10000;
-  width: 300px;
-}
-
-
-
-.forgot-password-dialog h2 {
-  margin-top: 0;
-  font-size: 24px;
-}
-
-.forgot-password-dialog form {
-  display: flex;
-  flex-direction: column;
-}
-
-.forgot-password-dialog label {
-  margin-bottom: 8px;
-}
-
-.forgot-password-dialog input {
+.input-field{
+  width: 100%;
   padding: 8px;
-  margin-bottom: 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.forgot-password-dialog button {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #ffff;
+  margin: 10px 0;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  background: #f9fcfc;
+  color:black;
 }
 
-.forgot-password-dialog button:hover {
-  background-color: #0056b3;
+.loginbutton:hover{
+  background-color: #283b72;
 }
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background: linear-gradient(to left, #4364f7, #6fb1fc);
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background: linear-gradient(to right, #4364f7, #6fb1fc);
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+.main-dabba{
+  margin-top: 20px;
+}
+
+.dabba{
+  display:flex;
+  flex-direction: column;
+
+}
+
+
+.glass-morph{
+
+  background: rgba(74, 145, 226, 0.212);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  /* backdrop-filter: blur( 0px ); */
+  /* -webkit-backdrop-filter: blur( 0px ); */
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }

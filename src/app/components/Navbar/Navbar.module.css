@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Pacifico&display=swap');
 
-.navbar {
-    background: -webkit-linear-gradient(to left, #7761DC, #010101, #010101, #7761DC);
-    background: linear-gradient(to left, #7761DC, #010101, #010101, #7761DC);
-    box-shadow: azure;
-}
+/* .nav-bar { */
+    /* background: linear-gradient(to right, #6b46c1, #4299e1); */
+    /* Other styles remain unchanged */
+/* } */
 
 .title {
     font-family: "Allura", cursive;
     font-weight: 800;
     font-style: normal;
-    text-align: center;
+    text-align: left; /* Changed from center to left */
+}
+
+/* Optional: Custom styles for buttons if needed */
+.button {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #7761DC; /* Example hover effect */
 }
