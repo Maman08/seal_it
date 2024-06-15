@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Authenticity Predictor</title>
+</head>
+<body>
+    <h1>Image Authenticity Predictor</h1>
+    <form method="POST">
+        <button type="submit">Predict</button>
+    </form>
+    {% if result is not none %}
+    <p>Result: {{ result }}</p>
+    {% endif %}
+</body>
+</html>
