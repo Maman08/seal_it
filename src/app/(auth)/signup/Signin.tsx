@@ -1,11 +1,14 @@
 import React from "react";
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
+import { usePathname } from 'next/navigation';
 import {auth} from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import toast from "react-hot-toast";
 function SignInForm({userType} : any) {
   const router = useRouter();
+
+  const pathname = usePathname();
 
   const [error, setError] = useState<string | null>(null);
 
@@ -31,11 +34,12 @@ function SignInForm({userType} : any) {
         // Signed in
         toast.success("Sign in successful");
         console.log("userType in signin form", userType)
-        if (userType == "Innovator!") {
-          router.push(`/smedashboard`);
+        if (userType == "Admin!") {
+          router.push(`/admin`);
         }
-        else if (userType == "Investor!") {
-          router.push(`/investor`);
+        else if (userType == "User!") {
+          router.push(`/user/${email.split('@')[0]}`);
+          // router.push(`/use`);//return the username
         }
       })
       .catch((error) => {
